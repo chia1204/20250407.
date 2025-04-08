@@ -1,0 +1,98 @@
+/* 設定背景充滿整個螢幕 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f5ebe0; /* 背景顏色 */
+  overflow: hidden; /* 隱藏滾動條 */
+}
+
+canvas {
+  display: block;
+  z-index: 1; /* 確保畫布位於背景上，但在 iframe 下方 */
+  position: relative;
+}
+
+/* 選單樣式 */
+.menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 200; /* 確保選單顯示在最上層 */
+}
+
+.menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #14213d; /* 字體顏色 */
+  position: relative;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* 子選單樣式 */
+.submenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* 預設隱藏子選單 */
+  position: absolute;
+  top: 0; /* 子選單與父選單頂部對齊 */
+  right: 100%; /* 子選單顯示在父選單的左側 */
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 201; /* 確保子選單顯示在選單上方 */
+}
+
+.menu li:hover .submenu {
+  display: block; /* 滑鼠懸停時顯示子選單 */
+}
+
+.submenu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #14213d;
+}
+
+.submenu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* 子選單中的連結樣式 */
+.submenu li a {
+  text-decoration: none;
+  color: #14213d;
+}
+
+.submenu li a:hover {
+  text-decoration: underline;
+}
+
+/* iframe 樣式 */
+#iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%; /* 寬度占整個畫面的 80% */
+  height: 80%; /* 高度占整個畫面的 80% */
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  z-index: 150; /* 確保 iframe 疊加在背景上，但在選單下方 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 添加陰影效果 */
+  transform: translate(-50%, -50%); /* 將 iframe 的中心對齊螢幕中心 */
+}

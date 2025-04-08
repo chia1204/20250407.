@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>程式設計期中報告</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 選單 -->
+    <ul class="menu">
+      <li>自我介紹</li>
+      <li>
+        作品集
+        <ul class="submenu">
+          <li><a href="#" onclick="loadContent('https://chia1204.github.io/20250303/')">第一週</a></li>
+          <li><a href="#" onclick="loadContent('https://example.com/week2')">第二週</a></li>
+          <li><a href="#" onclick="loadContent('https://example.com/week3')">第三週</a></li>
+          <li><a href="#" onclick="loadContent('https://example.com/week4')">第四週</a></li>
+        </ul>
+      </li>
+      <li>測驗卷</li>
+      <li>教學影片</li>
+    </ul>
+
+    <!-- 嵌入內容的 iframe -->
+    <iframe id="content-frame" src="" frameborder="0"></iframe>
+
+    <!-- p5.js 畫布 -->
+    <script src="sketch.js"></script>
+    <script>
+      // JavaScript function to load content into the iframe
+      function loadContent(url) {
+        document.getElementById('content-frame').src = url;
+      }
+    </script>
+  </body>
+</html>
